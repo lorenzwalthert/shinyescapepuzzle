@@ -1,4 +1,5 @@
 #' @import tibble
+#' @importFrom magrittr %>%
 hectagon_lattice_raw <- function(nx = 5, ny = 5, dist = 1, origin = c(0, 0)) {
   locations <- cbind(
     location = 1:(nx * ny),
@@ -45,4 +46,3 @@ hectagon_lattice <-function () {
     inner_join(mapping) %>%
     select(-.data$location)
 }
-
