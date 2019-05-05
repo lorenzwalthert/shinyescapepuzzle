@@ -17,4 +17,5 @@ BugReports: https://github.com/lorenzwalthert/escapepuzzle/issues
 Imports: 
     ggplot2,
     dplyr,
-    tibble
+    tibble,
+    magrittr
