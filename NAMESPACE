@@ -3,6 +3,7 @@
 export(hectagon_lattice)
 export(plot_state)
 export(press)
+export(score_state)
 import(ggplot2)
 import(tibble)
 importFrom(dplyr,.data)
