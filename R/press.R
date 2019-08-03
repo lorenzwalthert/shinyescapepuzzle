@@ -1,6 +1,6 @@
 #' Goes clockwise.
 #' @importFrom dplyr left_join select mutate .data
-press_botton <- function(state, mapping) {
+press_button <- function(state, mapping) {
   joined <- state %>%
     left_join(mapping, by = c("position" = "old_position")) %>%
     mutate(new_position = ifelse(is.na(.data$new_position), .data$position, .data$new_position)) %>%
@@ -23,15 +23,15 @@ mapping_from_vec <- function(vec) {
 }
 
 
-press_left <- purrr::partial(press_botton,
+press_left <- purrr::partial(press_button,
                              mapping = mapping_from_vec(c(1, 3, 7, 8, 5, 2))
 )
 
-press_top <- purrr::partial(press_botton,
+press_top <- purrr::partial(press_button,
                             mapping = mapping_from_vec(c(3, 6, 10, 11, 8, 4))
 )
 
-press_right <- purrr::partial(press_botton,
+press_right <- purrr::partial(press_button,
                               mapping = mapping_from_vec(c(4, 7, 11, 12, 9, 5))
 )
 
